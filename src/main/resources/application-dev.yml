@@ -1,0 +1,15 @@
+server:
+  port: 8888
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: root
+  #配置连接池 预计使用内置的hikari
+  #配置redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
