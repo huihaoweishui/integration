@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+
 @RestController
 @RequestMapping("/withOutLogin")
 public class WithOutLoginController {
@@ -16,7 +18,7 @@ public class WithOutLoginController {
 
     @GetMapping("getToken")
     public String getToken() {
-        String token = MyJWTUtil.createToken("123456", "xc", "xc");
+        String token = MyJWTUtil.createToken("123456", "xc", "xc", new HashMap<>());
         redisService.set("token", token);
         redisService.expire("token", 300);
         return token;
