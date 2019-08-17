@@ -18,7 +18,8 @@ public class WithOutLoginController {
 
     @GetMapping("getToken")
     public String getToken() {
-        String token = MyJWTUtil.createToken("123456", "xc", "xc", new HashMap<>());
+        System.out.println("hotfix");
+        String token = MyJWTUtil.createToken("123456", "xc", "xc",new HashMap<>());
         redisService.set("token", token);
         redisService.expire("token", 300);
         return token;
